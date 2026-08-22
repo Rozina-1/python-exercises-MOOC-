@@ -1,7 +1,7 @@
 def formatted(my_list):
     new_list = []
     for item in my_list:
-        formatted_item = f"{float(item):.2f}"
+        formatted_item = f"{item:.2f}"
         new_list.append(formatted_item)
     return new_list
 if __name__ == "__main__":
