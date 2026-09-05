@@ -30,11 +30,53 @@ def add_course(students: dict, name: str, course: tuple):
 
         students[name].append(course)
 
+def summary(students: list):
+    print(f"students {len(students)}")
+    most_course = 0
+    nam = ""
+    total_grade = 0
+    best_average = 0
+    for name,course in students.items():
+        if len(course) > most_course:
+            most_course = len(course)
+            nam = name
+    print(f"most courses completed {most_course} {nam}")
+
+    for name, courses in students.items():
+        for course,grade in courses:
+            total_grade += grade
+            average = total_grade/len(students[name])
+            if average > best_average:
+                best_average = average
+                na = name
+    # for course, grade in courses:
+    #     total_grade += grade
+    #     average = total_grade/len(students[name])
+    #     if average > best_average:
+    #         best_average = average
+    #         na = name
+    print(f"best average grade {best_average} {na}")  
+
+
+
 if __name__ == "__main__":  
+    # students = {}
+    # add_student(students, "Peter")
+    # add_course(students, "Peter", ("Introduction to Programming", 3))
+    # add_course(students, "Peter", ("Advanced Course in Programming", 2))
+    # add_course(students, "Peter", ("Data Structures and Algorithms", 0))
+    # add_course(students, "Peter", ("Introduction to Programming", 2))
+    # print_student(students, "Peter")
+     
     students = {}
+    add_student(students, "Emily")
     add_student(students, "Peter")
-    add_course(students, "Peter", ("Introduction to Programming", 3))
-    add_course(students, "Peter", ("Advanced Course in Programming", 2))
-    add_course(students, "Peter", ("Data Structures and Algorithms", 0))
-    add_course(students, "Peter", ("Introduction to Programming", 2))
-    print_student(students, "Peter")
+    add_course(students, "Emily", ("Software Development Methods", 4))
+    add_course(students, "Emily", ("Software Development Methods", 5))
+    add_course(students, "Peter", ("Data Structures and Algorithms", 3))
+    add_course(students, "Peter", ("Models of Computation", 0))
+    add_course(students, "Peter", ("Data Structures and Algorithms", 2))
+    add_course(students, "Peter", ("Introduction to Computer Science", 1))
+    add_course(students, "Peter", ("Software Engineering", 3))
+    summary(students)
+    summary(students)
