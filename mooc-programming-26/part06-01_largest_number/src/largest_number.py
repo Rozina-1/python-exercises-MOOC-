@@ -1,9 +1,9 @@
-import os
+# import os
 
 def largest():
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(script_dir, "numbers.txt")
-    with open(file_path) as new_file:
+    # script_dir = os.path.dirname(os.path.abspath(__file__))
+    # file_path = os.path.join(script_dir, "numbers.txt")
+    with open("numbers.txt") as new_file:
         greatest = 0
         for line in new_file:
             number1 = int(line.replace("\n", ""))
