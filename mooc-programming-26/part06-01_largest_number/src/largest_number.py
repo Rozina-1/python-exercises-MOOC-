@@ -1,14 +1,14 @@
-# import os
+from pathlib import Path
 
 def largest():
-    # script_dir = os.path.dirname(os.path.abspath(__file__))
-    # file_path = os.path.join(script_dir, "numbers.txt")
-    with open("numbers.txt") as new_file:
+    script_dir = Path(__file__).parent
+    file_path = script_dir / "numbers.txt"
+    with open(file_path) as new_file:
         greatest = 0
         for line in new_file:
-            number1 = int(line.replace("\n", ""))
-            if number1 > greatest:
-                greatest = number1
+            number = int(line.strip())
+            if number > greatest:
+                greatest = number
     return greatest
 
 if __name__ == "__main__":

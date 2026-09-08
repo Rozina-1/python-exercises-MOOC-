@@ -12,8 +12,6 @@ def sudoku_grid_correct(sudoku):
     return True
 def block_correct(sudoku, row, col):
     new_row = []
-    i = 0
-    j = 0
     for i in range(row, row + 3):
       for j in range(col, col + 3):
            if sudoku[i][j] in new_row and sudoku[i][j]>0:

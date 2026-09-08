@@ -5,8 +5,6 @@ def row_correct(soduku , row):
             if item in new_row:
                 return False
             new_row.append(item)
-
-
     return True
 if __name__ == "__main__":
     sudoku = [
