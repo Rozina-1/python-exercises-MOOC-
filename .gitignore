@@ -1,5 +1,5 @@
-*.csv/
-*.txt/
+*.csv
+*.txt
 tmc/
 test/
 __pycache__/
