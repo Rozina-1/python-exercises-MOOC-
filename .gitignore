@@ -1,5 +1,6 @@
-*.csv
-*.txt
+**/text_files/
+**/*.csv
+**/*.txt
 tmc/
 test/
 __pycache__/
