@@ -1,3 +1,5 @@
-﻿tmc/
+*.csv/
+*.txt/
+tmc/
 test/
 __pycache__/
