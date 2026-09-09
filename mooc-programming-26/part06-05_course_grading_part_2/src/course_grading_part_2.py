@@ -52,6 +52,8 @@ def course_grading():
         elif total_points <= 23:
             grade = 3
         elif total_points <= 27:
+            grade = 4
+        else:
             grade = 5
         print(name[key], grade)
 
