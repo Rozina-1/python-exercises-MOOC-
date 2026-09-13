@@ -42,6 +42,28 @@ def search_by_time(filename: str, time: int):
             found_recipie.append(found)
     return found_recipie
 
+def search_by_ingredient(filename: str, ingredient: str):
+    from pathlib import Path
+    script_dir = Path(__file__).parent
+    file_path = script_dir/filename
+    item = []
+    found_recipie = []
+    temprecipie = []
+    with open(file_path) as new_file:
+        for line in new_file:
+            line = line.strip("\n")
+            if line == "":
+                item.append(temprecipie)
+                temprecipie = []
+            else:
+                temprecipie.append(line)
+        item.append(temprecipie)
+    for block in item:
+        for ing in block[2:]:
+            if ingredient == ing:
+                found = f"{block[0]}, preparation time {int(block[1])} min"
+                found_recipie.append(found)
+    return found_recipie
 
 
 if __name__ == "__main__":
@@ -53,3 +75,6 @@ if __name__ == "__main__":
     for recipe in found_recipes:
         print(recipe)
 
+    found_recipes = search_by_ingredient("recipes1.txt", "eggs")
+    for recipe in found_recipes:
+        print(recipe)
